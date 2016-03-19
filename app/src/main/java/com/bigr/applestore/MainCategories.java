@@ -21,7 +21,7 @@ public class MainCategories extends AppCompatActivity {
 
         initialize();
 
-        intent = new Intent(getBaseContext(), ProductsList.class);
+        intent = new Intent(getBaseContext(), SubCategories.class);
         newBorn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

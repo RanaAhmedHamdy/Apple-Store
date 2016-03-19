@@ -38,10 +38,10 @@ public class ProductsList extends AppCompatActivity {
         mGridAdapter = new GridViewAdapter(this, R.layout.grid_item, mGridData);
         mGridView.setAdapter(mGridAdapter);
 
-        //mainCategory = getIntent().getExtras().get("main_category").toString();
-        //subCategory = getIntent().getExtras().get("subcategory").toString();
+        mainCategory = getIntent().getExtras().get("main_category").toString();
+        subCategory = getIntent().getExtras().get("subcategory").toString();
 
-        Firebase ref = new Firebase("https://appleluran.firebaseio.com/kids/t-shirts");
+        Firebase ref = new Firebase("https://appleluran.firebaseio.com/" + mainCategory + "/" + subCategory + "/");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
