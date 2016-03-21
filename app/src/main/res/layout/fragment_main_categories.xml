@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/new_born_image"
+                android:adjustViewBounds="true"
+                android:src="@drawable/newborn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="@dimen/padding_main_categories"
+                android:textSize="@dimen/text_size_main_categories"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:background="@color/transparent_black_hex_3"
+                android:text="@string/new_born"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/kids_image"
+                android:adjustViewBounds="true"
+                android:src="@drawable/kids"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="@dimen/padding_main_categories"
+                android:textSize="@dimen/text_size_main_categories"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:background="@color/transparent_black_hex_3"
+                android:text="@string/Kids"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/women_image"
+                android:adjustViewBounds="true"
+                android:src="@drawable/women"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="@dimen/padding_main_categories"
+                android:textSize="@dimen/text_size_main_categories"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:background="@color/transparent_black_hex_3"
+                android:text="@string/Women"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/men_image"
+                android:adjustViewBounds="true"
+                android:src="@drawable/men"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:padding="@dimen/padding_main_categories"
+                android:textSize="@dimen/text_size_main_categories"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:background="@color/transparent_black_hex_3"
+                android:text="@string/men"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

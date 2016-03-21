@@ -33,5 +33,7 @@
         <item>Dress</item>
         <item>Skirt</item>
     </string-array>
+    <string name="title_activity_cart">Cart</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

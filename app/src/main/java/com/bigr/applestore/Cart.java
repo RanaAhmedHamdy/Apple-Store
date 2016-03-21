@@ -3,11 +3,14 @@ package com.bigr.applestore;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class MainCategories extends AppCompatActivity {
+public class Cart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_categories);
+        setContentView(R.layout.activity_cart);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
     }
+
 }

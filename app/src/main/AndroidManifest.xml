@@ -23,7 +23,10 @@
         <activity android:name=".SubCategories" />
         <activity android:name=".ProductsList" />
         <activity android:name=".ProductDetails" />
-        <activity android:name=".AddProduct"></activity>
+        <activity
+            android:name=".Cart"
+            android:label="@string/title_activity_cart"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
