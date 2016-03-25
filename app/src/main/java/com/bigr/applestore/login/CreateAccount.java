@@ -9,10 +9,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.bigr.applestore.R;
+import com.bigr.applestore.models.Customer;
 import com.bigr.applestore.utils.Constants;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.ServerValue;
+import com.firebase.client.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class CreateAccount extends AppCompatActivity {
@@ -73,6 +78,8 @@ public class CreateAccount extends AppCompatActivity {
             public void onSuccess(Map<String, Object> result) {
                 /* Dismiss the progress dialog */
                 mAuthProgressDialog.dismiss();
+                String uid = (String) result.get("uid");
+                createUserInFirebaseHelper(uid);
             }
 
             @Override
@@ -91,10 +98,32 @@ public class CreateAccount extends AppCompatActivity {
 
     }
 
-    /**
-     * Creates a new user in Firebase from the Java POJO
-     */
-    private void createUserInFirebaseHelper(final String encodedEmail) {
+    private void createUserInFirebaseHelper(String uid) {
+
+        final Firebase userLocation = new Firebase(Constants.FIREBASE_URL_USERS).child(uid);
+        /**
+         * See if there is already a user (for example, if they already logged in with an associated
+         * Google account.
+         */
+        userLocation.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                /* If there is no user, make one */
+                if (dataSnapshot.getValue() == null) {
+                 /* Set raw version of date to the ServerValue.TIMESTAMP value and save into dateCreatedMap */
+                    HashMap<String, Object> timestampJoined = new HashMap<>();
+                    timestampJoined.put(Constants.FIREBASE_PROPERTY_TIMESTAMP, ServerValue.TIMESTAMP);
+
+                    Customer newCustomer = new Customer(mUserName, mUserEmail, timestampJoined);
+                    userLocation.setValue(newCustomer);
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
+
     }
 
     private boolean isEmailValid(String email) {
