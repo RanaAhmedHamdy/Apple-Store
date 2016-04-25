@@ -5,4 +5,5 @@
     <dimen name="text_size_main_categories">30dp</dimen>
     <dimen name="padding_main_categories">10dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="price_text_size">25dp</dimen>
 </resources>

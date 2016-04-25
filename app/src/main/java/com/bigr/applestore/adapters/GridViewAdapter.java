@@ -1,4 +1,4 @@
-package com.bigr.applestore;
+package com.bigr.applestore.adapters;
 
 /**
  * Created by Rana on 3/18/2016.
@@ -13,7 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bigr.applestore.R;
 import com.bigr.applestore.models.GridItem;
+import com.bigr.applestore.utils.Constants;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -61,7 +63,7 @@ public class GridViewAdapter extends ArrayAdapter<GridItem> {
         GridItem item = mGridData.get(position);
         holder.titleTextView.setText(Html.fromHtml(item.getTitle()));
 
-        Picasso.with(mContext).load(item.getImage()).into(holder.imageView);
+        Picasso.with(mContext).load(Constants.IMAGE_URL + item.getImage()).into(holder.imageView);
         return row;
     }
 

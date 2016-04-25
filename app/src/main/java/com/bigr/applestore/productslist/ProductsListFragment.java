@@ -1,16 +1,23 @@
-package com.bigr.applestore;
+package com.bigr.applestore.productslist;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.bigr.applestore.cart.Cart;
+import com.bigr.applestore.R;
+import com.bigr.applestore.adapters.GridViewAdapter;
 import com.bigr.applestore.models.GridItem;
 import com.bigr.applestore.models.Product;
+import com.bigr.applestore.productdetails.ProductDetails;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -31,6 +38,7 @@ public class ProductsListFragment extends Fragment {
     private ArrayList<Product> products;
 
     public ProductsListFragment() {
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -82,5 +90,21 @@ public class ProductsListFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_cart, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.basket) {
+            Intent intent = new Intent(getActivity(), Cart.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

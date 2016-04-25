@@ -10,5 +10,6 @@ public class Constants {
     public static final String PASSWORD_PROVIDER = "password";
     public static final String  FIREBASE_URL = "https://appleluran.firebaseio.com/";
     public static final String FIREBASE_URL_USERS = "https://appleluran.firebaseio.com/customers";
+    public static final String IMAGE_URL = "http://res.cloudinary.com/appleluran/image/upload/";
     public static final String FIREBASE_PROPERTY_TIMESTAMP = "timestamp";
 }

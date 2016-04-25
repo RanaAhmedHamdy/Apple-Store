@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bigr.applestore.MainCategories;
+import com.bigr.applestore.maincategories.MainCategories;
 import com.bigr.applestore.R;
 import com.bigr.applestore.utils.Constants;
 import com.firebase.client.AuthData;

@@ -1,8 +1,12 @@
-package com.bigr.applestore;
+package com.bigr.applestore.productdetails;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -10,7 +14,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bigr.applestore.cart.Cart;
+import com.bigr.applestore.R;
 import com.bigr.applestore.models.Product;
+import com.bigr.applestore.utils.Constants;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -27,6 +34,7 @@ public class ProductDetailsFragment extends Fragment {
     private Product product;
 
     public ProductDetailsFragment() {
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -51,8 +59,8 @@ public class ProductDetailsFragment extends Fragment {
     private void setData() {
         age.setText(product.getAge());
         material.setText(product.getMaterial());
-        price.setText(product.getPrice());
-        Picasso.with(getActivity()).load(product.getImage()).into(productImage);
+        price.setText(product.getPrice() + " L.E");
+        Picasso.with(getActivity()).load(Constants.IMAGE_URL + product.getImage()).into(productImage);
 
         ArrayAdapter<String> colorAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1, product.getColors());
@@ -65,5 +73,21 @@ public class ProductDetailsFragment extends Fragment {
 
         // Assign adapter to ListView
         sizes.setAdapter(sizeAdapter);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_cart, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.basket) {
+            Intent intent = new Intent(getActivity(), Cart.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

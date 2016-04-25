@@ -14,14 +14,11 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
         </activity>
-        <activity android:name=".MainCategories" />
-        <activity android:name=".SubCategories" />
-        <activity android:name=".ProductsList" />
-        <activity android:name=".ProductDetails" />
-        <activity
-            android:name=".Cart"
-            android:label="@string/title_activity_cart"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".maincategories.MainCategories" />
+        <activity android:name=".subcategories.SubCategories" />
+        <activity android:name=".productslist.ProductsList" />
+        <activity android:name=".productdetails.ProductDetails" />
+        <activity android:name=".cart.Cart" />
         <activity android:name=".login.CreateAccount">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

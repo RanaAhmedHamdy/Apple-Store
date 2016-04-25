@@ -1,7 +1,9 @@
-package com.bigr.applestore;
+package com.bigr.applestore.subcategories;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.bigr.applestore.R;
 
 public class SubCategories extends AppCompatActivity {
 
